@@ -178,7 +178,7 @@ public class TestTUI {
 	 * @postcondition no change to object
 	 */
 	private void displayLoopReversedTestScores() {
-		
+		System.out.println("The loop-reversed test scores are:\n" + this.userTestManager.reverseListWithALoop());
 	}
 	
 	/**
@@ -190,6 +190,6 @@ public class TestTUI {
 	 * @postcondition no change to object
 	 */
 	private void displayRecursiveReversedTestScores() {
-		
+		System.out.println("The loop-reversed test scores are:\n" + this.userTestManager.reverseListWithRecursion());
 	}
 }

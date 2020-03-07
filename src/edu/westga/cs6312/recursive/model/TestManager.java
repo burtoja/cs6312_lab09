@@ -48,7 +48,8 @@ public class TestManager {
 	 * This method returns a String representation of the object data (test scores)
 	 * in a single line
 	 * 
-	 * @return String representation of the test scores held by the object
+	 * @return String representation of the test scores on single line separated by
+	 *         single spaces
 	 *
 	 * @precondition none
 	 *
@@ -62,6 +63,29 @@ public class TestManager {
 		} else {
 			for (int currentScore : this.testScores) {
 				report += currentScore + " ";
+			}
+		}
+		return report;
+	}
+
+	/**
+	 * This method will return a String of the test scores separated by single
+	 * spaces in reverse order.
+	 * 
+	 * @return single line of test scores separated by single spaces in reverse
+	 *         order
+	 *
+	 * @precondition none
+	 *
+	 * @postcondition no change to object
+	 */
+	public String reverseListWithALoop() {
+		String report = "";
+		if (this.testScores.size() == 0) {
+			report += "There are no current test scores";
+		} else {
+			for (int currentScore : this.testScores) {
+				report = currentScore + " " + report;
 			}
 		}
 		return report;

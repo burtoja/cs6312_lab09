@@ -70,7 +70,7 @@ public class TestManager {
 
 	/**
 	 * This method will return a String of the test scores separated by single
-	 * spaces in reverse order.
+	 * spaces in reverse order (using a loop).
 	 * 
 	 * @return single line of test scores separated by single spaces in reverse
 	 *         order
@@ -87,6 +87,50 @@ public class TestManager {
 			for (int currentScore : this.testScores) {
 				report = currentScore + " " + report;
 			}
+		}
+		return report;
+	}
+
+	/**
+	 * This method will return a String of the test scores separated by single
+	 * spaces in reverse order (using recursion).
+	 * 
+	 * @return single line of test scores separated by single spaces in reverse
+	 *         order
+	 *
+	 * @precondition none
+	 *
+	 * @postcondition no change to object
+	 */
+	public String reverseListWithRecursion() {
+		String report = "";
+		if (this.testScores.size() == 0) {
+			report += "There are no current test scores";
+		} else {
+			report = this.reverseListHelper(this.testScores.size() - 1);
+		}
+		return report;
+	}
+
+	/**
+	 * Helper method to recursively create a String representation of the test
+	 * scores in reverse order
+	 * 
+	 * @param currentIndex
+	 * 
+	 * @return single line of test scores separated by single spaces in reverse
+	 *         order
+	 *
+	 * @precondition currentIndex >= 0
+	 *
+	 * @postcondition no change to object
+	 */
+	private String reverseListHelper(int currentIndex) {
+		String report = "";
+		if (currentIndex == 0) {
+			report = this.testScores.get(0) + " ";
+		} else {
+			report = this.testScores.get(currentIndex) + " " + this.reverseListHelper(currentIndex - 1);
 		}
 		return report;
 	}

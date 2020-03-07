@@ -24,17 +24,17 @@ public class TestManager {
 	public TestManager() {
 		this.testScores = new ArrayList<Integer>();
 	}
-	
+
 	/**
 	 * This method adds an integer score to the list of test scores
 	 * 
-	 * @param scoreToAddToList	integer test score to be added to the object list
+	 * @param scoreToAddToList integer test score to be added to the object list
 	 *
-	 * @precondition	scoreToAddToList >=0 && scoreToAddToList <= 100
+	 * @precondition scoreToAddToList >=0 && scoreToAddToList <= 100
 	 *
-	 * @postcondition	the new test score is added to the list
+	 * @postcondition the new test score is added to the list
 	 */
-	public void	addTestScore(int scoreToAddToList) {
+	public void addTestScore(int scoreToAddToList) {
 		if (scoreToAddToList < 0) {
 			throw new IllegalArgumentException("Test score must be a non-zero integer");
 		}
@@ -43,24 +43,25 @@ public class TestManager {
 		}
 		this.testScores.add(scoreToAddToList);
 	}
-	
+
 	/**
 	 * This method returns a String representation of the object data (test scores)
+	 * in a single line
 	 * 
-	 * @return	String representation of the test scores held by the object
+	 * @return String representation of the test scores held by the object
 	 *
-	 * @precondition	none
+	 * @precondition none
 	 *
-	 * @postcondition	no change to object
+	 * @postcondition no change to object
 	 */
 	@Override
 	public String toString() {
-		String report = "Current Test Scores:\n";
+		String report = "";
 		if (this.testScores.size() == 0) {
-			report += "\tThere are no current test scores";
+			report += "There are no current test scores";
 		} else {
 			for (int currentScore : this.testScores) {
-				report += "\t" + currentScore + "\n";
+				report += currentScore + " ";
 			}
 		}
 		return report;

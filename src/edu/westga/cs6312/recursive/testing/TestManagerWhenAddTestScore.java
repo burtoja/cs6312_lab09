@@ -20,14 +20,14 @@ public class TestManagerWhenAddTestScore {
 	 * test score of 55 and then calling the toString() method which should return
 	 * the following:
 	 * 
-	 * Current Test Scores:\n\t55\n
+	 * 55 
 	 */
 	@Test
 	public void testAddTestScoreAdd55() {
 		TestManager theTestManager = new TestManager();
 		theTestManager.addTestScore(55);
 		String report = theTestManager.toString();
-		assertEquals("Current Test Scores:\n\t55\n", report);
+		assertEquals("55 ", report);
 	}
 
 	/**
@@ -35,7 +35,7 @@ public class TestManagerWhenAddTestScore {
 	 * three test scores of 55, 79, 99 and then calling the toString() method which
 	 * should return the following:
 	 * 
-	 * Current Test Scores:\n\t55\nt79\nt99\n
+	 * 55 79 99
 	 */
 	@Test
 	public void testAddTestScoreAddMultiple557999() {
@@ -44,7 +44,7 @@ public class TestManagerWhenAddTestScore {
 		theTestManager.addTestScore(79);
 		theTestManager.addTestScore(99);
 		String report = theTestManager.toString();
-		assertEquals("Current Test Scores:\n\t55\n\t79\n\t99\n", report);
+		assertEquals("55 79 99 ", report);
 	}
 	
 	/**
@@ -52,14 +52,14 @@ public class TestManagerWhenAddTestScore {
 	 * a test score of 0 and then calling the toString() method which
 	 * should return the following:
 	 * 
-	 * Current Test Scores:\n\t0\n
+	 * 0 
 	 */
 	@Test
 	public void testAddTestScoreAddLowEnd0() {
 		TestManager theTestManager = new TestManager();
 		theTestManager.addTestScore(0);
 		String report = theTestManager.toString();
-		assertEquals("Current Test Scores:\n\t0\n", report);
+		assertEquals("0 ", report);
 	}
 	
 	/**
@@ -67,14 +67,14 @@ public class TestManagerWhenAddTestScore {
 	 * a test score of 100 and then calling the toString() method which
 	 * should return the following:
 	 * 
-	 * Current Test Scores:\n\t1000\n
+	 * 100 
 	 */
 	@Test
 	public void testAddTestScoreAddTopEnd100() {
 		TestManager theTestManager = new TestManager();
 		theTestManager.addTestScore(100);
 		String report = theTestManager.toString();
-		assertEquals("Current Test Scores:\n\t100\n", report);
+		assertEquals("100 ", report);
 	}
 
 }

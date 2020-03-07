@@ -26,6 +26,6 @@ public class TestManagerWhenCreateTestManager {
 	public void testCreateNewTestManager() {
 		TestManager theTestManager = new TestManager();
 		String report = theTestManager.toString();
-		assertEquals("Current Test Scores:\n\tThere are no current test scores", report);
+		assertEquals("There are no current test scores", report);
 	}
 }
